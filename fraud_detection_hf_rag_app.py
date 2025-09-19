@@ -75,12 +75,10 @@ st.markdown("""
 
 # Cache data loading and model training
 @st.cache_data
-# Cache data loading and model training
-@st.cache_data
 def load_data():
     """Loads the dataset from a local file."""
     try:
-        df = pd.read_csv("creditcardfraud.csv")
+        df = pd.read_csv("/creditcardfraud.csv")
         df = df.drop_duplicates().copy()
         return df
     except FileNotFoundError:
