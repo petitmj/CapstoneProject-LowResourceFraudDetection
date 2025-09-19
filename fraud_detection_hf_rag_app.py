@@ -76,8 +76,9 @@ st.markdown("""
 # Cache data loading and model training
 @st.cache_data
 def load_data():
-    """Loads the dataset from a local file."""
+    """Loads a small subset of the dataset from a local file."""
     try:
+        # Load only the first 50,000 rows to reduce resource usage
         df = pd.read_csv("creditcard.csv", nrows=50000)
         df = df.drop_duplicates().copy()
         return df
@@ -125,6 +126,7 @@ def train_model(df, model_type='Logistic Regression'):
         }
     else:  # RandomForest
         model = RandomForestClassifier(random_state=42, class_weight='balanced')
+        # Simplified param_grid to avoid resource exhaustion
         param_grid = {
             'n_estimators': [100],
             'max_depth': [5],
