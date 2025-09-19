@@ -56,6 +56,14 @@ To run the interactive fraud detection application locally, follow these steps:
     ```
     This will launch the app in your default web browser.
 
+4.  **Run the notebook version on Google Colab:**
+    ```
+    (https://colab.research.google.com/drive/1uNlV1j4PUQuH61NBFPUh6JLp1nNQuU3L?usp=sharing)
+    ```
+    This will launch the CLI Version.
+
+   
+
 ## Future Work
 
   * Explore other advanced models, such as Gradient Boosting or Neural Networks, on larger, more diverse datasets.
