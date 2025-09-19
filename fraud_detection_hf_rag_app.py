@@ -18,7 +18,7 @@ import warnings
 import json
 import time
 from datetime import datetime
-import kagglehub
+# import kagglehub
 
 warnings.filterwarnings('ignore')
 
@@ -126,9 +126,9 @@ def train_model(df, model_type='Logistic Regression'):
     else:  # RandomForest
         model = RandomForestClassifier(random_state=42, class_weight='balanced')
         param_grid = {
-            'n_estimators': [100, 200],
-            'max_depth': [5, 10],
-            'min_samples_leaf': [1, 2]
+            'n_estimators': [100],
+            'max_depth': [5],
+            'min_samples_leaf': [1]
         }
     
     grid_search = GridSearchCV(model, param_grid, cv=StratifiedKFold(n_splits=5), scoring=my_scorer, n_jobs=-1, verbose=1)
@@ -147,8 +147,8 @@ def create_confusion_matrix_plot(y_test, y_pred):
     cm_df = pd.DataFrame(cm, index=['Actual Legitimate', 'Actual Fraud'], columns=['Predicted Legitimate', 'Predicted Fraud'])
     
     fig = px.imshow(cm_df, text_auto=True, color_continuous_scale='Blues',
-                    labels=dict(x="Predicted", y="Actual", color="Count"),
-                    title="Confusion Matrix")
+                     labels=dict(x="Predicted", y="Actual", color="Count"),
+                     title="Confusion Matrix")
     fig.update_xaxes(side="top")
     return fig
 
@@ -160,7 +160,7 @@ def create_pr_curve_plot(model, X_test, y_test):
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=recall, y=precision, mode='lines', name='Precision-Recall Curve'))
     fig.add_trace(go.Scatter(x=[0, 1], y=[len(y_test[y_test==1]) / len(y_test), len(y_test[y_test==1]) / len(y_test)],
-                             mode='lines', name='No-Skill Line', line=dict(dash='dash')))
+                              mode='lines', name='No-Skill Line', line=dict(dash='dash')))
     
     fig.update_layout(
         title="Precision-Recall Curve",
