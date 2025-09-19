@@ -78,7 +78,7 @@ st.markdown("""
 def load_data():
     """Loads the dataset from a local file."""
     try:
-        df = pd.read_csv("/creditcard.csv")
+        df = pd.read_csv("creditcard.csv")
         df = df.drop_duplicates().copy()
         return df
     except FileNotFoundError:
