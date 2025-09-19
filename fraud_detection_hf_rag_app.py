@@ -78,11 +78,11 @@ st.markdown("""
 def load_data():
     """Loads the dataset from a local file."""
     try:
-        df = pd.read_csv("/creditcardfraud.csv")
+        df = pd.read_csv("/creditcard.csv")
         df = df.drop_duplicates().copy()
         return df
     except FileNotFoundError:
-        st.error("The 'creditcardfraud.csv' file was not found in the repository. Please upload the file and ensure it is in the same directory as the app.py script.")
+        st.error("The 'creditcard.csv' file was not found in the repository. Please upload the file and ensure it is in the same directory as the app.py script.")
         return None
     except Exception as e:
         st.error(f"Failed to load data: {e}")
