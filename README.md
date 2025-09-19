@@ -60,7 +60,7 @@ To run the interactive fraud detection application locally, follow these steps:
     ```
     (https://colab.research.google.com/drive/1uNlV1j4PUQuH61NBFPUh6JLp1nNQuU3L?usp=sharing)
     ```
-    This will launch the CLI Version.
+    
 
    
 
