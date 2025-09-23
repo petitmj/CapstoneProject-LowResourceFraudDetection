@@ -50,16 +50,17 @@ To run the interactive fraud detection application locally, follow these steps:
     ```bash
     pip install -r requirements.txt
     ```
-3.  **Run the Streamlit application:**
+3.  **Run the notebook version on Google Colab:**
+    ```
+    (https://colab.research.google.com/drive/1uNlV1j4PUQuH61NBFPUh6JLp1nNQuU3L?usp=sharing)
+    ```
+
+4.  **Run the Streamlit application:**
     ```bash
     streamlit run fraud_detection_hf_rag_app.py
     ```
     This will launch the app in your default web browser.
-
-4.  **Run the notebook version on Google Colab:**
-    ```
-    (https://colab.research.google.com/drive/1uNlV1j4PUQuH61NBFPUh6JLp1nNQuU3L?usp=sharing)
-    ```
+   
     
 
    
