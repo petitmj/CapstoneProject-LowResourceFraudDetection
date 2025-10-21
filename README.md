@@ -42,7 +42,7 @@ To run the interactive fraud detection application locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/low-resource-fraud-detection.git
+    git clone https://github.com/petitmj/low-resource-fraud-detection.git
     cd low-resource-fraud-detection
     ```
 2.  **Install dependencies:**
